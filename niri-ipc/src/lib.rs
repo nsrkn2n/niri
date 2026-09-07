@@ -621,6 +621,8 @@ pub enum Action {
         #[cfg_attr(feature = "clap", arg())]
         output: String,
     },
+    /// Focus the monitor under the cursor.
+    FocusMonitorUnderCursor {},
     /// Move the focused window to the monitor to the left.
     MoveWindowToMonitorLeft {},
     /// Move the focused window to the monitor to the right.

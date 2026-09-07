@@ -1770,6 +1770,12 @@ impl State {
                     self.niri.layer_shell_on_demand_focus = None;
                 }
             }
+            Action::FocusMonitorUnderCursor => {
+                if let Some(output) = self.niri.output_under_cursor() {
+                    self.niri.layout.focus_output(&output);
+                    self.niri.layer_shell_on_demand_focus = None;
+                }
+            }
             Action::MoveWindowToMonitorLeft => {
                 if let Some(current_output) = self.niri.screenshot_ui.selection_output() {
                     if let Some(target_output) = self.niri.output_left_of(current_output) {
